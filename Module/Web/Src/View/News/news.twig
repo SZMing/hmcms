@@ -1,0 +1,68 @@
+{% extends "Layout/master.twig" %}
+{% block content %}
+    <!--banner start-->
+
+    <div class="banner">
+    </div>
+
+    <!--banner end-->
+
+    <!--内容开始-->
+    <div class="contentWarp">
+        <div class="content">
+            <div class="tabs">
+                <span><a class="addLi" href="#">玩够动态</a></span>
+                <span><a href="#">媒体报道</a></span>
+            </div>
+            <div class="list">
+                <ul>
+
+                    {% for news in result['result'] %}
+                        <li>
+                            <div>
+                                <h2>{{ news.title }}</h2>
+                                <p>
+                                    {{ news.descrip }}
+                                </p>
+                            </div>
+                            <span>{{ news.create|date('Y-m-d') }}</span>
+                            <i>{{ news.create|date('m') }}月</i>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+            <div class="conTab">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+
+                        {% for i in 1..result['pagecount'] %}
+                            <li class="{{ result['offset'] == i ? 'active' : '' }}"><a href="/web/news/news?offset={{ i }}&many={{ result['many'] }}">{{ i }}</a></li>
+                        {% endfor %}
+
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--内容结束-->
+
+{% endblock %}
+
+{% block foot_js %}
+    <script src="/static/home/js/manage.js"></script>
+{% endblock %}
+
+{% block head_css %}
+    <link rel="stylesheet" href="/static/home/stylesheets/new.css">
+{% endblock %}

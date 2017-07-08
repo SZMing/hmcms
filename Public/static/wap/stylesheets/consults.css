@@ -1,0 +1,173 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../sass/consults.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 11, ../sass/consults.scss */
+.homepage {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 17, ../sass/consults.scss */
+.consult {
+  width: 100%;
+}
+/* line 19, ../sass/consults.scss */
+.consult .title {
+  width: 100%;
+  height: 2rem;
+  background: #53C7C4;
+  font-size: 0.6rem;
+  padding: 0.5rem 0.2rem 0;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+/* line 30, ../sass/consults.scss */
+.consult .title span {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  padding: 0 0.1rem;
+}
+/* line 38, ../sass/consults.scss */
+.consult .foots {
+  width: 100%;
+  height: 3rem;
+  position: fixed;
+  bottom: 2.7rem;
+  left: 0;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 1rem;
+  border-top: 1px solid #dddddd;
+}
+/* line 47, ../sass/consults.scss */
+.consult .foots input {
+  display: inline-block;
+  height: 1.5rem;
+  -webkit-flex: 1;
+  flex: 1;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
+}
+/* line 56, ../sass/consults.scss */
+.consult .foots div {
+  text-align: right;
+  -webkit-flex: 0 0 3rem;
+  flex: 0 0 3rem;
+}
+/* line 59, ../sass/consults.scss */
+.consult .foots div span {
+  display: inline-block;
+  border: 1px solid #dddddd;
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.6rem;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #53C7C4;
+  color: #ffffff;
+  font-size: 0.7rem;
+}
+
+/*footer*/
+/* line 73, ../sass/consults.scss */
+.foot {
+  height: 2.7rem;
+}
+/* line 75, ../sass/consults.scss */
+.foot #footer {
+  height: 2.7rem;
+  background: #171717;
+}
+/* line 78, ../sass/consults.scss */
+.foot #footer .link {
+  color: #53C7C4;
+}
+/* line 82, ../sass/consults.scss */
+.foot #footer a {
+  color: #ffffff;
+}
+
+/*footer*/

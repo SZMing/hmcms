@@ -1,0 +1,270 @@
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*header start*/
+/* line 6, ../sass/_header.scss */
+.header {
+  height: 80px;
+  min-width: 1000px;
+  background: #ffffff;
+}
+/* line 10, ../sass/_header.scss */
+.header a {
+  text-decoration: none !important;
+}
+/* line 14, ../sass/_header.scss */
+.header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 10px 10px 0;
+}
+/* line 19, ../sass/_header.scss */
+.header .row {
+  height: 80px;
+}
+/* line 21, ../sass/_header.scss */
+.header .row > div {
+  height: 80px;
+}
+/* line 24, ../sass/_header.scss */
+.header .row > div ul li {
+  margin-left: 3%;
+}
+/* line 28, ../sass/_header.scss */
+.header .row > div > p {
+  font-size: 14px;
+}
+/* line 33, ../sass/_header.scss */
+.header .row .navsR {
+  margin-top: 30px;
+  text-align: right;
+}
+/* line 36, ../sass/_header.scss */
+.header .row .navsR a {
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin: 0 10px;
+  color: #57c6bd;
+  border: 1px solid #57c6bd;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 3px 10px;
+}
+/* line 45, ../sass/_header.scss */
+.header .row .navsR span {
+  font-size: 14px;
+  color: #57c6bd;
+}
+/* line 49, ../sass/_header.scss */
+.header .row .navsR .login {
+  margin-left: 0;
+}
+/* line 52, ../sass/_header.scss */
+.header .row .navsR .register {
+  margin-right: 20px;
+}
+/* line 56, ../sass/_header.scss */
+.header .row ul {
+  height: 80px;
+  margin-bottom: 0;
+}
+/* line 59, ../sass/_header.scss */
+.header .row ul li {
+  float: left;
+  margin-left: 10%;
+  line-height: 80px;
+}
+/* line 63, ../sass/_header.scss */
+.header .row ul li a {
+  padding: 5px;
+  font-size: 14px;
+  border-bottom: 2px solid #ffffff;
+  color: #000000;
+}
+/* line 68, ../sass/_header.scss */
+.header .row ul li a:hover {
+  border-bottom: 2px solid #57c6bd;
+  color: #57c6bd;
+}
+
+/*header end*/
+/*banner start*/
+/* line 9, ../sass/manage.scss */
+.banner {
+  width: 100%;
+  height: 300px;
+  min-width: 980px;
+  overflow: hidden;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background: url("../img/manage/d.jpg") no-repeat center;
+}
+
+/*banner end*/
+/*content start*/
+/* line 21, ../sass/manage.scss */
+.content_warp {
+  width: 100%;
+  height: 630px;
+  background: #f3f3f3;
+  margin-top: 300px;
+}
+/* line 27, ../sass/manage.scss */
+.content_warp .row > div {
+  margin-top: 190px;
+}
+/* line 29, ../sass/manage.scss */
+.content_warp .row > div:nth-child(1) {
+  text-align: right;
+}
+/* line 32, ../sass/manage.scss */
+.content_warp .row > div:nth-child(2) {
+  text-align: center;
+}
+/* line 35, ../sass/manage.scss */
+.content_warp .row > div:nth-child(3) {
+  text-align: left;
+}
+/* line 39, ../sass/manage.scss */
+.content_warp .row .box {
+  width: 300px;
+  height: 200px;
+  background: #ffffff;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+/* line 46, ../sass/manage.scss */
+.content_warp .row .box > img {
+  position: absolute;
+  top: -86px;
+  left: 103px;
+  width: 100px;
+}
+/* line 52, ../sass/manage.scss */
+.content_warp .row .box p {
+  padding-top: 50px;
+  text-align: center;
+}
+/* line 55, ../sass/manage.scss */
+.content_warp .row .box p img {
+  vertical-align: middle;
+  width: 35px;
+}
+/* line 59, ../sass/manage.scss */
+.content_warp .row .box p .mid {
+  height: 30px;
+}
+/* line 62, ../sass/manage.scss */
+.content_warp .row .box p span {
+  vertical-align: middle;
+  margin: 0 10px;
+}
+/* line 67, ../sass/manage.scss */
+.content_warp .row .box a {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 140px;
+  height: 40px;
+  border: 1px solid #4e8bed;
+  text-decoration: none;
+  margin-top: 35px;
+  line-height: 35px;
+}
+/* line 75, ../sass/manage.scss */
+.content_warp .row .box a:hover {
+  background: #b9d3ff;
+  color: #4e8bed;
+}
+
+/*content end*/
+/*footer start*/
+/* line 2, ../sass/_footer.scss */
+.footer {
+  width: 100%;
+  height: 160px;
+  background: #282828;
+}
+/* line 6, ../sass/_footer.scss */
+.footer p {
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+}
+/* line 10, ../sass/_footer.scss */
+.footer p:first-child {
+  padding: 55px 0 15px;
+}
+
+/*footer end*/

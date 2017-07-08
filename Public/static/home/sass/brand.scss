@@ -1,0 +1,96 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "header";
+@import "footer";
+/*header start*/
+@include header();
+/*header end*/
+
+/*banner start*/
+.banner{
+  width:100%;
+  height:300px;
+  overflow:hidden;
+  position:absolute;
+  top:80px;
+  left:0;
+  img{
+    display:block;
+    margin-top:-10%;
+    width:100%;
+    min-height:300px;
+  }
+}
+/*banner end*/
+
+/*content start*/
+.content_warp{
+  width:100%;
+  height:1000px;
+  background:#f3f3f3;
+  margin-top:300px;
+  .content{
+    width:980px;
+    min-width:980px;
+    margin:0 auto;
+    padding-top:50px;
+
+    .con_l{
+      float:left;
+      width:110px;
+      background:#ffffff;
+      ul{
+        width:100%;
+        height:100%;
+        text-align:center;
+        padding:40px 0;
+        li{
+          width:100%;
+          height:16px;
+          line-height:16px;
+          border-left:3px solid #ffffff;
+          margin-bottom:40px;
+          cursor:pointer;
+          &:last-child{
+            margin-bottom:0;
+          }
+        }
+        .addLi{
+          border-left:3px solid #53c7c4;
+           color:#53c7c4;
+        }
+      }
+    }
+    .con_r{
+      position:relative;
+      float:right;
+      width:830px;
+      background:#ffffff;
+      height:800px;
+      .con_cen{
+        width:100%;
+        height:100%;
+        padding:50px;
+        img{
+          float:left;
+          width:100px;
+          height:100px;
+        }
+      }
+      nav{
+        text-align:center;
+        margin-top:30px;
+      }
+    }
+
+  }
+}
+/*content end*/
+
+
+
+/*footer start*/
+
+@include footer();
+/*footer end*/
+

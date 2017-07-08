@@ -1,0 +1,16 @@
+@mixin footer(){
+  .footer{
+    width:100%;
+    height:160px;
+    background:#282828;
+    p{
+      text-align:center;
+      font-size:14px;
+      color:#666666;
+      &:first-child{
+        padding:55px 0 15px;
+
+      }
+    }
+  }
+}

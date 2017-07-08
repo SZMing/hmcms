@@ -1,0 +1,62 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+@import "compass/css3";
+html,body{
+  width:100%;
+  height:100%;
+  overflow:auto;
+}
+.homepage{
+  width:100%;
+  height:100%;
+}
+.pathway2{
+  background:#ffffff;
+  width:100%;
+  height:100%;
+  .finish{
+    img{
+      display:block;
+      width:5rem;
+      margin:0 auto;
+      padding-top:3rem;
+    }
+    h2{
+      font-size:1rem;
+      text-align:center;
+      margin:1rem 0 1.5rem;
+    }
+    p{
+      font-size:0.7rem;
+      text-align:center;
+      margin-bottom:0.2rem;
+    }
+  }
+  .pass{
+    height:20%;
+    width:100%;
+    padding: 3rem 2rem;
+  }
+  .aui-btn{
+    background:#53C7C4;
+  }
+}
+/*footer*/
+.foot{
+  height:8%;
+  #footer{
+    height:8%;
+    background:#171717;
+    .link{
+      color:#53C7C4;
+    }
+    //点击切换颜色
+    a{
+      color:#ffffff;
+    }
+  }
+}
+/*footer*/

@@ -1,0 +1,111 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "header";
+@import "footer";
+/*header start*/
+@include header();
+/*header end*/
+/*banner start*/
+.banner{
+  width:100%;
+  height:300px;
+  overflow:hidden;
+  margin-top:-10px;
+  img{
+    display:block;
+    width:100%;
+    min-height:300px;
+  }
+}
+/*banner end*/
+
+
+/*content start*/
+
+  .content_warp{
+    width:100%;
+    height:800px;
+    background:#ecfefe;
+    .row{
+      img{
+        width:90%;
+        padding:150px 0 0 50px;
+      }
+
+/*register*/
+      .registers{
+        margin-top:140px;
+        width:420px;
+        height:460px;
+        background:#ffffff;
+        padding: 0 50px;
+        .tab{
+          width:100%;
+          text-align:center;
+          padding-top:30px;
+          font-size:18px;
+          color:#999999;
+          span{
+            cursor:pointer;
+            margin:0 5px;
+            &:last-child{
+              color:#53c7c4;
+            }
+          }
+        }
+        .line{
+          width:100%;
+          height:1px;
+          background:#dddddd;
+          margin: 25px 0 30px;
+        }
+        .lonnum{
+          width:100%;
+        }
+
+        .form-group{
+          #btns{
+           width:100%;
+            font-size:14px;
+            margin-left:-10px;
+          }
+          height:50px;
+          position:relative;
+          .control-label{
+            position:absolute;
+            left:30px;
+            top:10px;
+            z-index:10;
+            i{
+              font-size:20px;
+              color:#53c7c4;
+            }
+          }
+          .form-control{
+            height:50px;
+            padding-left:50px;
+          }
+          .btn{
+            width:90%;
+            padding:0;
+            height:50px;
+            background:#53c7c4;
+            font-size:18px;
+            color:#ffffff;
+            margin-left:20px;
+          }
+          .trues{
+            margin-top:40px;
+          }
+        }
+      }
+
+    }
+    }
+/*content end*/
+
+/*footer start*/
+
+@include footer();
+/*footer end*/
+

@@ -1,0 +1,275 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../sass/apply42.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 11, ../sass/apply42.scss */
+.apply42 {
+  width: 100%;
+  height: 92%;
+  overflow: auto;
+}
+/* line 15, ../sass/apply42.scss */
+.apply42 .pross {
+  width: 100%;
+  height: 4rem;
+  background: #f3f3f3;
+  padding-top: 1.5rem;
+}
+/* line 20, ../sass/apply42.scss */
+.apply42 .pross .item {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  height: 1px;
+  background: #dddddd;
+}
+/* line 25, ../sass/apply42.scss */
+.apply42 .pross .item li {
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  margin-top: -0.5rem;
+}
+/* line 29, ../sass/apply42.scss */
+.apply42 .pross .item li:nth-child(4) span {
+  background: #53c7c4;
+  color: #ffffff;
+}
+/* line 33, ../sass/apply42.scss */
+.apply42 .pross .item li:nth-child(4) p {
+  color: #53c7c4;
+}
+/* line 36, ../sass/apply42.scss */
+.apply42 .pross .item li span {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.6rem;
+  position: relative;
+}
+/* line 47, ../sass/apply42.scss */
+.apply42 .pross .item li span img {
+  position: absolute;
+  top: 0.4rem;
+  right: -0.3rem;
+}
+/* line 53, ../sass/apply42.scss */
+.apply42 .pross .item li p {
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
+}
+/* line 61, ../sass/apply42.scss */
+.apply42 .tit {
+  color: #999999;
+  font-size: 0.7rem;
+  padding-left: 0.5rem;
+  line-height: 2rem;
+}
+/* line 68, ../sass/apply42.scss */
+.apply42 .comcard {
+  background: #ffffff;
+}
+/* line 71, ../sass/apply42.scss */
+.apply42 .comcard ul li {
+  padding: 0.5rem;
+  height: 2.2rem;
+  font-size: 0.6rem;
+  color: #766666;
+  border-bottom: 1px solid #dddddd;
+}
+/* line 77, ../sass/apply42.scss */
+.apply42 .comcard ul li .aui-list-item-inner {
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 79, ../sass/apply42.scss */
+.apply42 .comcard ul li .aui-list-item-inner .aui-list-item-label {
+  -webkit-flex: 0 0 5rem;
+  flex: 0 0 5rem;
+  line-height: 1.2rem;
+}
+/* line 83, ../sass/apply42.scss */
+.apply42 .comcard ul li .aui-list-item-inner .aui-list-item-input {
+  -webkit-flex: 1;
+  flex: 1;
+}
+/* line 85, ../sass/apply42.scss */
+.apply42 .comcard ul li .aui-list-item-inner .aui-list-item-input input {
+  margin-top: -0.6rem;
+  font-size: 0.7rem;
+}
+/* line 94, ../sass/apply42.scss */
+.apply42 .popin {
+  margin-top: 0.6rem;
+  background: #ffffff;
+}
+/* line 98, ../sass/apply42.scss */
+.apply42 .popin ul li {
+  padding: 0.5rem;
+  height: 2.2rem;
+  font-size: 0.6rem;
+  color: #766666;
+  border-bottom: 1px solid #dddddd;
+}
+/* line 104, ../sass/apply42.scss */
+.apply42 .popin ul li .aui-list-item-inner {
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 106, ../sass/apply42.scss */
+.apply42 .popin ul li .aui-list-item-inner .aui-list-item-label {
+  -webkit-flex: 0 0 5rem;
+  flex: 0 0 5rem;
+  line-height: 1.2rem;
+}
+/* line 110, ../sass/apply42.scss */
+.apply42 .popin ul li .aui-list-item-inner .aui-list-item-input {
+  -webkit-flex: 1;
+  flex: 1;
+}
+/* line 112, ../sass/apply42.scss */
+.apply42 .popin ul li .aui-list-item-inner .aui-list-item-input .push {
+  margin-top: -2px;
+}
+/* line 115, ../sass/apply42.scss */
+.apply42 .popin ul li .aui-list-item-inner .aui-list-item-input input {
+  margin-top: -0.6rem;
+  font-size: 0.7rem;
+  width: 100%;
+}
+/* line 126, ../sass/apply42.scss */
+.apply42 .contact {
+  margin-top: 0.6rem;
+  background: #ffffff;
+}
+/* line 130, ../sass/apply42.scss */
+.apply42 .contact ul li {
+  padding: 0.5rem;
+  height: 2.2rem;
+  font-size: 0.6rem;
+  color: #766666;
+  border-bottom: 1px solid #dddddd;
+}
+/* line 136, ../sass/apply42.scss */
+.apply42 .contact ul li .aui-list-item-inner {
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 138, ../sass/apply42.scss */
+.apply42 .contact ul li .aui-list-item-inner .aui-list-item-label {
+  -webkit-flex: 0 0 5rem;
+  flex: 0 0 5rem;
+  line-height: 1.2rem;
+}
+/* line 144, ../sass/apply42.scss */
+.apply42 .contact ul li .aui-list-item-inner .aui-list-item-input .push {
+  margin-top: -2rem;
+}
+/* line 147, ../sass/apply42.scss */
+.apply42 .contact ul li .aui-list-item-inner .aui-list-item-input input {
+  margin-top: -0.6rem;
+  font-size: 0.7rem;
+}
+/* line 157, ../sass/apply42.scss */
+.apply42 .submits {
+  padding: 2rem;
+}
+/* line 159, ../sass/apply42.scss */
+.apply42 .submits .aui-list-item-inner {
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 161, ../sass/apply42.scss */
+.apply42 .submits .aui-list-item-inner > div {
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+/* line 167, ../sass/apply42.scss */
+.apply42 .submits .aui-btn-info {
+  background: #F5A623 !important;
+  width: 4rem;
+}
+/* line 172, ../sass/apply42.scss */
+.apply42 .submits .aui-btn-danger {
+  width: 4rem;
+  background: #53C7C4 !important;
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>合作申请</title>
+    <link rel="stylesheet" href="../../stylesheets/apply3.css">
+    <link rel="stylesheet" href="../../stylesheets/aui.css">
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="apply3">
+    <div class="pross">
+        <ul class="item">
+            <li>
+                <span>1 <img src="../../img/apply/tick.png" alt="">  </span>
+                <p>签订协议</p>
+            </li>
+            <li>
+                <span>2 <img src="../../img/apply/tick.png" alt=""></span>
+                <p>服务内容</p>
+            </li>
+            <li>
+                <span>3</span>
+                <p>基本信息</p>
+            </li>
+            <li>
+                <span>4</span>
+                <p>管理信息</p>
+            </li>
+            <li>
+                <span>5</span>
+                <p>完成</p>
+            </li>
+        </ul>
+
+    </div>
+    <!--基本公司信息-->
+    <div class="comin">
+        <ul>
+            <li>
+                <span>公司号名称:</span> <input type=""/>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        公司属性：
+                    </div>
+                    <div class="aui-list-item-input">
+                        <label><input class="aui-radio" type="radio" value="42" name="types" checked> 个人</label>
+                        <label><input class="aui-radio" type="radio" value="41" name="types"> 公司</label>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        公众号类型：
+                    </div>
+                    <div class="aui-list-item-input type">
+                        <i class="aui-iconfont aui-icon-down"></i>
+                        <select>
+                            <option>订阅号</option>
+                            <option>服务号</option>
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item Textarea">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        公众号简介：
+                    </div>
+                    <div class="aui-list-item-input">
+                        <textarea placeholder="输入公众号简介，限300字"></textarea>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item ipone">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        公众号电话：
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="输入公众号客服电话号码">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--个人基本信息-->
+    <div class="locin">
+        <ul>
+            <li class="aui-list-item ipone">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        联系人电话：
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="联系人电话">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item ipone">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        联系人手机号：
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="联系人手机号">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="submits">
+        <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+            <div>
+                <div class="aui-btn aui-btn-info aui-margin-r-5">保存</div>
+            </div>
+            <div>
+                <div class="aui-btn aui-btn-danger aui-margin-l-5" @click="clickFn">
+                    下一步
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

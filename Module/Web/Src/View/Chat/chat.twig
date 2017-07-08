@@ -1,0 +1,56 @@
+{% extends "Layout/master.twig" %}
+{% block content %}
+    <!--内容开始-->
+    <div class="centent_warp">
+        <div class="centent clearfix">
+
+            <div class="cen_r">
+                <h2>聊天咨询</h2>
+                <div class="xieCon">
+
+
+                </div>
+
+                <input type="text" />
+
+                <a href="#">
+                    <div class="btns">
+                        发送
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+    <!--内容结束-->
+
+
+    <script>
+
+        var ws = new WebSocket("ws://127.0.0.1:9501");
+        ws.onopen = function () {
+            console.log('连接成功');
+            ws.send('ming');
+        };
+
+        ws.onmessage = function (e) {
+            console.log('收到服务器的消息：' + e.data);
+        }
+
+        ws.onclose=function(e){
+            console.log(e);
+            console.log('mmmmmmmmmmmmmmm');
+            ws.close(); //关闭TCP连接
+        };
+
+        ws.close();
+
+    </script>
+
+
+{% endblock %}
+
+{% block head_css %}
+    <link rel="stylesheet" href="/static/home/stylesheets/sign.css">
+{% endblock %}

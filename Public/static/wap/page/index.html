@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/aui.css">
+    <link rel="stylesheet" href="../stylesheets/swiper-3.4.1.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="homepage" >
+    <!-- 轮播图 start-->
+    <div class="banner">
+        <!--轮播图-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../img/index/banner.jpg"/></div>
+                <div class="swiper-slide"><img src="../img/index/banner.jpg"/></div>
+            </div>
+        </div>
+        <!--轮播图的滚动字-->
+        <div class="swiper-text">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide stop-swiping">
+                    <p>玩够服务平台累计激活公众号用户</p>
+                    <p>11,545,345人</p>
+                </div>
+                <div class="swiper-slide stop-swiping">
+                    <p>玩够服务平台累计激活公众号用户</p>
+                    <p>11,545,345人</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--轮播图 end-->
+
+    <!--解决 start-->
+    <div class="solve">
+
+        <div class="head">
+            <div>
+                —
+            </div>
+            <h3>解决方案</h3>
+            <div>
+                —
+            </div>
+        </div>
+        <a href="#">
+            <div class="top">
+                <div class="top-l ban">
+                    <img src="../img/index/canyin.jpg" alt=""> <span>餐饮</span>
+                </div>
+                <div class="top-r">
+                    <div class="ban"><img src="../img/index/baoye.jpg" alt=""> <span>报业</span>
+                    </div>
+                    <div class="ban"><img src="../img/index/liren.jpg" alt=""> <span>丽人</span></div>
+                    <div class="ban"><img src="../img/index/jiudian.jpg" alt=""> <span>酒店</span></div>
+                    <div class="ban"><img src="../img/index/jingqu.jpg" alt=""> <span>景区</span></div>
+                </div>
+            </div>
+            <div class="bt">
+                <div class="ban"><img src="../img/index/shangchao.jpg" alt=""> <span>商超</span></div>
+                <div class="ban"><img src="../img/index/lingshou.jpg" alt=""> <span>零售</span></div>
+            </div>
+        </a>
+    </div>
+    <!--解决 end-->
+    <!--新闻 start-->
+    <div class="news">
+        <div class="tabs aui-tab">
+            <div class="aui-tab-item"><span class="active">玩够动态</span></div>
+            <div class="aui-tab-item"><span>媒体渠道</span></div>
+        </div>
+
+        <!--玩够内容-->
+        <ul class="aui-list aui-list-in wangou">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">玩够动态</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">玩够动态</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">玩够动态</div>
+                </div>
+            </li>
+        </ul>
+        <!--媒体内容-->
+        <ul class="aui-list aui-list-in meiti">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">媒体渠道</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">媒体渠道</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">媒体渠道</div>
+                </div>
+            </li>
+        </ul>
+        <div class="aui-card-list-footer aui-text-center">
+            <router-link to="/home/news">
+                查看更多
+            </router-link>
+        </div>
+    </div>
+    <!--新闻 end-->
+
+    <!--服务 start-->
+    <div class="service">
+        <div class="head">
+            <div>
+                —
+            </div>
+            <h3>服务品牌</h3>
+            <div>
+                —
+            </div>
+        </div>
+
+        <ul class="partner">
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+            <li><img src="../img/index/only.png" alt=""></li>
+        </ul>
+        <div class="aui-card-list-footer aui-text-center">
+            <router-link to="/service/serviceChild">查看更多</router-link>
+        </div>
+    </div>
+    <!--服务 end-->
+
+
+</div>
+
+<!--底部 start-->
+<div class="foot">
+    <footer class="aui-bar aui-bar-tab" id="footer">
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <a href="javascript:;" class="link">
+                <i class="aui-iconfont aui-icon-home"></i>
+                <div class="aui-bar-tab-label">首页</div>
+            </a>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <a href="javascript:;">
+                <i class="aui-iconfont aui-icon-star"></i>
+                <div class="aui-bar-tab-label">合作申请</div>
+            </a>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <a href="javascript:;">
+                <i class="aui-iconfont aui-icon-cart"></i>
+                <div class="aui-bar-tab-label">在线咨询</div>
+            </a>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <a href="javascript:;">
+                <i class="aui-iconfont aui-icon-my"></i>
+                <div class="aui-bar-tab-label">渠道中心</div>
+            </a>
+        </div>
+    </footer>
+</div>
+<!--底部 end-->
+<script src="../js/swiper-3.4.2.jquery.min.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/home/stylesheets/reset.css">
+    <link rel="stylesheet" href="/static/home/stylesheets/bootstrap.css">
+
+    {% block head_css %}
+    {% endblock %}
+
+
+
+    <link rel="stylesheet" href="/static/home/stylesheets/swiper-3.4.1.min.css">
+    <script src="/static/home/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/home/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--顶部开始-->
+<div class="container header">
+    <div class="row">
+        <div class="col-xs-2 col-md-2">
+            <h1>玩够服务平台</h1>
+            <p>股票代码:456900</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <ul class="navs clearfix">
+                <li><a href="/">首页</a></li>
+                <li><a href="/web/apply/apply">合作申请</a></li>
+                <li><a href="/web/chat/chat">在线咨询</a></li>
+                <li><a href="">客服服务</a></li>
+                <li><a href="/web/news/news">新闻中心</a></li>
+                <li><a href="">管理中心</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-4 col-md-4 navsR">
+            <a class="login" href="#">登录</a>
+            <a class="register" href="#">注册</a>
+            <span>400-823-7618</span>
+        </div>
+    </div>
+</div>
+<!--顶部结束-->
+
+
+
+{% block content %}{% endblock %}
+
+
+<!--底部 start-->
+<div class="footer">
+    <p>冀网文许字[2014]1383-005号 冀公网安备 13100302000515号 ICP冀B2-20100316 新广出审[2014]1495号</p>
+    <p>新广出审[2014]1495号 冀ICP备10011613号</p>
+</div>
+<!--底部 end-->
+<script src="/static/home/js/swiper-3.4.1.jquery.min.js"></script>
+
+{% block foot_js %}
+{% endblock %}
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1498197235659'); /* IE9*/
+  src: url('iconfont.eot?t=1498197235659#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1498197235659') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1498197235659') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1498197235659#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixin:before { content: "\3434"; }
+
+.icon-pengyouquan:before { content: "\e60b"; }
+
+.icon-mima:before { content: "\e65e"; }
+
+.icon-denglu:before { content: "\e62f"; }
+
+.icon-kongjian:before { content: "\e66d"; }
+
+.icon-shangdian:before { content: "\e607"; }
+
+.icon-tupian:before { content: "\e616"; }
+
+.icon-xinlang:before { content: "\e602"; }
+
+.icon-gamebar:before { content: "\e600"; }
+
+.icon-login:before { content: "\e611"; }
+
+.icon-caidan:before { content: "\e68b"; }
+
+.icon-shangcheng:before { content: "\e604"; }
+
+.icon-yanzhengma:before { content: "\e6e6"; }
+
+.icon-tuiguang:before { content: "\e620"; }
+
+.icon-shujuguanli:before { content: "\e96b"; }
+

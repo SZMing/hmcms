@@ -1,0 +1,223 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+@import "compass/css3";
+html,body{
+  width:100%;
+  height:100%;
+
+}
+.homepage{
+  height:100%;
+  width:100%;
+  overflow:scroll;
+  -webkit-overflow-scrolling:touch;
+}
+.banner{
+  .swiper-container{
+    width:100%;
+    img{
+      width:100%;
+    }
+  }
+  position:relative;
+
+  .swiper-text{
+    position:absolute;
+    width:100%;
+    height:3.5rem;
+    overflow:hidden;
+    text-align:center;
+    bottom:0;
+    .swiper-wrapper{
+      .swiper-slide{
+        background:rgba(0, 0, 0, 0.6);
+        p{
+          color:#ffffff;
+          letter-spacing:1px;
+          padding-top:0.3rem;
+        }
+        p:first-child{
+          font-size:0.6rem;
+          padding-top:0.6rem;
+        }
+        p:last-child{
+          font-size:1rem;
+          margin-top:0.2rem;
+        }
+      }
+    }
+  }
+}
+/*solve start*/
+
+.solve{
+  .ban{
+    position:relative;
+    span{
+      position:absolute;
+      left:50%;
+      top:50%;
+      @include translate(-50%, -50%);
+      color:#ffffff;
+      font-size:0.7rem;
+    }
+  }
+  padding:0.6rem;
+  .head{
+    @include display-flex();
+    line-height:3rem;
+    div{
+    @include flex(1);
+    }
+    div:first-child{
+      text-align:right;
+    }
+    h3{
+      @include flex(0 0 25%);
+      text-align:center;
+      font-weight:600;
+    }
+  }
+  .top{
+    @include display-flex();
+    .top-l{
+      width:50%;
+      padding:0.2rem;
+      img{
+        width:100%;
+      }
+    }
+    .top-r{
+      width:50%;
+      padding:0.2rem;
+       @include display-flex();
+      @include flex-wrap(wrap);
+      div{
+        width:50%;
+        &:first-child{
+          padding:0 0.2rem 0.2rem 0;
+        }
+        &:nth-child(2){
+          padding:0 0 0.2rem 0.2rem;
+        }
+        &:nth-child(3){
+          padding:0.2rem 0.2rem 0 0;
+        }
+        &:nth-child(4){
+          padding:0.2rem 0 0 0.2rem;
+        }
+        img{
+          width:100%;
+        }
+      }
+    }
+  }
+
+  .bt{
+     @include display-flex();
+    width:100%;
+    div{
+      img{
+        width:100%;
+      }
+      width:50%;
+      padding:0.2rem;
+    }
+  }
+}
+/*solve end*/
+
+
+/*new start*/
+.news{
+  background:#ffffff;
+
+  .tabs{
+    span{
+      display:block;
+      width:4.5rem;
+      line-height:2.2rem;
+      margin:0 auto;
+    }
+    .active{
+      border-bottom:2px solid #00bcd4;
+    }
+  }
+  ul{
+    width:100%;
+    margin-top:2px;
+  }
+
+  .aui-list-item-title{
+    font-size:0.7rem !important;
+  }
+  .meiti{
+    display:none;
+  }
+}
+/*new end*/
+
+
+/*service start*/
+
+.service{
+  margin-top:1rem;
+  .head{
+    @include display-flex();
+    line-height:3rem;
+    background:#ffffff;
+    div{
+      @include flex(1);
+    }
+    div:first-child{
+      text-align:right;
+    }
+    h3{
+      @include flex(0 0 25%);
+      text-align:center;
+      font-weight:600;
+    }
+  }
+  .partner{
+    width:100%;
+    background:#ffffff;
+    @include display-flex();
+    @include flex-wrap(wrap);
+    li{
+      width:25%;
+      img{
+        width:100%;
+        padding:0.3rem;
+      }
+    }
+
+    .aui-card-list-footer{
+      background:#ffffff;
+      border-top:1px solid #dddddd;
+    }
+  }
+}
+/*service end*/
+
+/*footer*/
+.foot{
+  height:8%;
+  #footer{
+    z-index:100 !important;
+    height:8%;
+    background:#171717;
+    .link{
+      color:#53C7C4;
+    }
+    //点击切换颜色
+    a{
+      color:#ffffff;
+    }
+
+  }
+
+}
+/*footer*/
