@@ -21,6 +21,14 @@ class FrameController extends Controller
     }
 
     /**
+     * 后台内容页面
+     */
+    public function main()
+    {
+        return $this->render('admin/frame/main');
+    }
+
+    /**
      * 后台登录界面
      */
     public function login()
