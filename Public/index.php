@@ -6,6 +6,8 @@
  * Time: 下午12:01
  */
 
+ini_set('display_errors','On');
+
 define('BASEPATH',__DIR__);
 
 //注册到php自动载入

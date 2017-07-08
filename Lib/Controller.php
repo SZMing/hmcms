@@ -104,7 +104,7 @@ class Controller
     public function config($param)
     {
         $arr = explode('.',$param);
-        $data = require_once BASEPATH . '/../Config/'.$arr[0].'.php';
+        $data = require BASEPATH . '/../Config/'.$arr[0].'.php';
         return $data[$arr[1]];
     }
 
@@ -134,6 +134,7 @@ class Controller
 
         $loader = new \Twig_Loader_Filesystem(BASEPATH . '/../Module/'.ucfirst($arr[0]).'/Src/View');
 
+        $twig = null;
         if(False === $this->config('twig.cache'))
         {
             $twig = new \Twig_Environment($loader,array('debug' => false));
@@ -143,6 +144,10 @@ class Controller
                 'cache' => BASEPATH . '/../Bootstrap/cache/view',
             ]);
         }
+
+        //配置定界符
+        $lexer = new \Twig_Lexer($twig,$this->config('twig.tags'));
+        $twig->setLexer($lexer);
 
         //手机浏览器
         if(self::mobile())

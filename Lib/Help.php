@@ -16,7 +16,7 @@ class Help
     static public function config($param)
     {
         $arr = explode('.',$param);
-        $data = require_once BASEPATH . '/../Config/'.$arr[0].'.php';
+        $data = require BASEPATH . '/../Config/'.$arr[0].'.php';
         return $data[$arr[1]];
     }
 }

@@ -28,7 +28,7 @@ return [
     'master' => [
         'host' => 'localhost',
         'port' => '3306',
-        'db' => 'wghome',
+        'db' => 'hmcms',
         'user' => 'root',
         'pwd' => 'pass4mingming',
         'charset' => 'utf8'
@@ -37,7 +37,7 @@ return [
     'slaver' => [
         'host' => 'localhost',
         'port' => '3306',
-        'db' => 'wghome',
+        'db' => 'hmcms',
         'user' => 'root',
         'pwd' => 'pass4mingming',
         'charset' => 'utf8'

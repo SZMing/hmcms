@@ -8,4 +8,9 @@
 
 return [
     'cache' => false,
+    'tags' => [
+        'tag_comment'  => array('<%#', '%>'),
+        'tag_block'    => array('<%', '%>'),
+        'tag_variable' => array('<%=', '%>'),
+    ],
 ];

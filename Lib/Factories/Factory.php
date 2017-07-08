@@ -31,8 +31,8 @@ class Factory
         if($id == 'master')
         {
             $database_info = $help::config('database.master');
-            //return new \PDO('mysql:host='.$database_info['host'].';dbname='.$database_info['db'].';charset='.$database_info['charset'], $database_info['user'], $database_info['pwd']);
-            return new \PDO('mysql:host=localhost;dbname=hmcms;charset=utf8', 'root', 'pass4mingming');
+            return new \PDO('mysql:host='.$database_info['host'].';dbname='.$database_info['db'].';charset='.$database_info['charset'], $database_info['user'], $database_info['pwd']);
+            //return new \PDO('mysql:host=localhost;dbname=hmcms;charset=utf8', 'root', 'pass4mingming');
         }
 
         //返回从库的连接对象
@@ -40,8 +40,8 @@ class Factory
         {
             $database_info = $help::config('database.slaver');
 
-            //return new \PDO('mysql:host='.$database_info['host'].';dbname='.$database_info['db'].';charset='.$database_info['charset'], $database_info['user'], $database_info['pwd']);
-            return new \PDO('mysql:host=localhost;dbname=hmcms;charset=utf8', 'root', 'pass4mingming');
+            return new \PDO('mysql:host='.$database_info['host'].';dbname='.$database_info['db'].';charset='.$database_info['charset'], $database_info['user'], $database_info['pwd']);
+            //return new \PDO('mysql:host=localhost;dbname=hmcms;charset=utf8', 'root', 'pass4mingming');
         }
     }
 }

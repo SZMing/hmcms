@@ -25,12 +25,24 @@ class AdminController extends Controller
      */
     public function admin_list()
     {
-        if($this->request->is_post())
-        {
+        return $this->render('admin/admin/admin_list');
+    }
 
-        }else
-        {
-            return $this->render('admin/admin/admin_list',['admin_list' => $this->admin_model::admin_list(),'menu' => 'admin','item' => 'admin_list']);
-        }
+    public function admin_lists()
+    {
+        $data = [
+            'rel' => true,
+            'msg' => '获取成功',
+            'list' => [
+                ['name' => '张三', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
+                ['name' => '张三', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
+                ['name' => '张三', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
+                ['name' => '张三', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
+                ['name' => '张三', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
+            ],
+            'count' => 57,
+        ];
+        //return $this->success($data);
+        return json_encode($data);
     }
 }
