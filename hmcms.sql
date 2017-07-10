@@ -29,7 +29,7 @@ CREATE TABLE `admin` (
   `phonenum` varchar(15) NOT NULL DEFAULT '',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'ming','111111','11111111111',12312312),(2,'ming','111111','11111111111',12312312),(3,'ming','111111','11111111111',12312312),(4,'lili','111111','11111111111',12312312),(5,'ming','111111','11111111111',12312312),(6,'ming','111111','11111111111',12312312),(7,'ming','111111','11111111111',12312312),(8,'ming','111111','11111111111',12312312),(9,'ming','111111','11111111111',12312312),(10,'lili','111111','11111111111',1499653384),(11,'liyang','111111','11111111111',1499653384),(12,'ming','111111','11111111111',12312312),(13,'ming','111111','11111111111',12312312),(14,'ming','111111','11111111111',12312312),(15,'ming','111111','11111111111',12312312),(16,'ming','111111','11111111111',12312312),(17,'ming','111111','11111111111',12312312),(18,'ming','111111','11111111111',12312312),(19,'ming','111111','11111111111',12312312),(20,'ming','111111','11111111111',12312312);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,6 +64,65 @@ CREATE TABLE `admin_role` (
 LOCK TABLES `admin_role` WRITE;
 /*!40000 ALTER TABLE `admin_role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `admin_role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu`
+--
+
+DROP TABLE IF EXISTS `menu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `showd` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否在首页显示',
+  `pid` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(30) NOT NULL DEFAULT '',
+  `category_tpl` varchar(30) NOT NULL DEFAULT '',
+  `list_tpl` varchar(30) NOT NULL DEFAULT '',
+  `detail_tpl` varchar(30) NOT NULL DEFAULT '',
+  `module_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '模型id',
+  `descrip` varchar(150) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu`
+--
+
+LOCK TABLES `menu` WRITE;
+/*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+INSERT INTO `menu` VALUES (1,1,0,'电脑','aaaa','aaaa','aaa',1,'aaaaaa',1),(7,1,1,'aaaa','wg_index','wg_list','wg_detail',31,'aaaaaaaa',1);
+/*!40000 ALTER TABLE `menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `modules`
+--
+
+DROP TABLE IF EXISTS `modules`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `modules` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `name` varchar(30) NOT NULL DEFAULT '',
+  `module_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1为单页模型 2为文章模型',
+  `descrip` varchar(150) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `modules`
+--
+
+LOCK TABLES `modules` WRITE;
+/*!40000 ALTER TABLE `modules` DISABLE KEYS */;
+INSERT INTO `modules` VALUES (31,1,'单页模型',1,'单页模型即机遇栏目的内容模型，设置一个栏目后，点击寻找相应的内容进行模板渲染，但是需要给对应的栏目选择一个有效的模板'),(32,1,'文章类型',2,'文章类型即整个文章系统，包括列表页面和详情页面，首先获取栏目下的列表模板，然后点击新闻找到相应的详情模板，但是也需要提前选择一套可用的模板');
+/*!40000 ALTER TABLE `modules` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -101,7 +161,7 @@ CREATE TABLE `role` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `role_name` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,6 +170,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'管理员组'),(2,'程序组'),(3,'美工组');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-08  9:31:03
+-- Dump completed on 2017-07-10  9:08:59
