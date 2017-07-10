@@ -9,6 +9,7 @@
 namespace Module\Admin\Src\Controller;
 
 use Lib\Controller;
+use Lib\Help;
 use Lib\Request;
 use Module\Admin\Src\Model\Interfaces\MenuInterface;
 
@@ -69,7 +70,6 @@ class MenuController extends Controller
         $menus = [];
         foreach ($data as $menu)
         {
-
             $menus[$menu['m1id']]['m1name'] = $menu['m1name'];
             $menus[$menu['m1id']]['m1id'] = $menu['m1id'];
             $menus[$menu['m1id']]['category'][] = [
@@ -78,7 +78,12 @@ class MenuController extends Controller
             ];
         }
 
-        return $this->render('admin/menu/add_menu',['modules' => $modules,'menus'=>$menus]);
+        //查询模板
+        //取出启用的模板
+        $theme = Help::config('twig.theme');
+        //取出所有的模板
+        $tpls = Help::config('tpl.'.$theme);
+        return $this->render('admin/menu/add_menu',['modules' => $modules,'menus'=>$menus,'tpls'=>$tpls]);
     }
 
     /**
@@ -95,6 +100,9 @@ class MenuController extends Controller
             $status = 1;
         }
         $descrip = $this->request->post('descrip');
+        $category_tpl = $this->request->post('category_tpl');
+        $list_tpl = $this->request->post('list_tpl');
+        $detail_tpl = $this->request->post('detail_tpl');
 
         $data = [
             'name' => $name,
@@ -102,6 +110,9 @@ class MenuController extends Controller
             'pid' => $pid,
             'status' => $status,
             'descrip' => $descrip,
+            'category_tpl' => $category_tpl,
+            'list_tpl' => $list_tpl,
+            'detail_tpl' => $detail_tpl,
         ];
 
         if($this->menu_model->add_menu($data))
@@ -110,6 +121,21 @@ class MenuController extends Controller
         }else
         {
             return $this->fails(10005,'新增栏目失败');
+        }
+    }
+
+    /**
+     * 删除栏目
+     */
+    public function delete_menu()
+    {
+        $menu_id = $this->request->get('id');
+        if($this->menu_model->delete_menu($menu_id))
+        {
+            return $this->success();
+        }else
+        {
+            return $this->fails(10005,'删除栏目失败');
         }
     }
 

@@ -34,10 +34,12 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>菜单名称</th>
+                        <th>栏目名称</th>
                         <th>所属模型</th>
-                        <th>菜单状态</th>
-                        <th>菜单简介</th>
+                        <th>栏目状态</th>
+                        <th>栏目二级模板</th>
+                        <th>栏目列表模板</th>
+                        <th>栏目详情模板</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -55,12 +57,14 @@
                 <tr>
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
-                    <td>{{ item.module_id }}</td>
-                    <td>{{ item.status }}</td>
-                    <td>{{ item.descrip }}</td>
+                    <td>{{ item.module_name }}</td>
+                    <td>{{ item.status == 1?'启用':'禁用' }}</td>
+                    <td>{{ item.category_tpl }}</td>
+                    <td>{{ item.list_tpl }}</td>
+                    <td>{{ item.detail_tpl }}</td>
                     <td>
                         <a href="" class="layui-btn layui-btn-mini">编辑</a>
-                        <a href="" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                        <a href="javascript:void(0)" onclick="delete_menu({{ item.id }})" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
                     </td>
                 </tr>
                 {{# }); }}
@@ -113,6 +117,18 @@
                         });
                     });
                 });
+
+                var delete_menu = function (id) {
+                    var $ = layui.jquery;
+                    $.ajax({
+                        url:'/admin/menu/delete_menu?id='+id,
+                        type: 'GET',
+                        success:function (result) {
+                            layer.msg(result.msg);
+                            setTimeout("window.location.href = '/admin/menu/menu'",1000);
+                        }
+                    });
+                }
             </script>
 
 

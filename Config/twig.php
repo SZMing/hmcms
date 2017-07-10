@@ -8,6 +8,8 @@
 
 return [
     'cache' => false,
+    //启用的模板
+    'theme' => 'wghome',
     'tags' => [
         'tag_comment'  => array('<%#', '%>'),
         'tag_block'    => array('<%', '%>'),

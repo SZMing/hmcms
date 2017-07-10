@@ -42,12 +42,12 @@ class MenuModel extends Proxy implements MenuInterface
         if($name)
         {
             $like = '%'.$name.'%';
-            $sql = "select id,name,module_id,descrip,status from menu where name like '".$like."' limit $spage,$page_size";
+            $sql = "select menu.id,menu.name,menu.status,menu.category_tpl,menu.list_tpl,menu.detail_tpl,mo.name as module_name from menu LEFT JOIN modules as mo on mo.id = menu.module_id where name like '".$like."' limit $spage,$page_size";
             //查询总条数
             $sql_count = "select count(*) as counts from menu where name like '".$like."'";
         }else
         {
-            $sql = "select id,name,module_id,descrip,status from menu limit $spage,$page_size";
+            $sql = "select menu.id,menu.name,menu.status,menu.category_tpl,menu.list_tpl,menu.detail_tpl,mo.name as module_name from menu LEFT JOIN modules as mo on mo.id = menu.module_id limit $spage,$page_size";
             //查询总条数
             $sql_count = 'select count(*) as counts from menu';
         }
@@ -62,14 +62,18 @@ class MenuModel extends Proxy implements MenuInterface
      */
     public function add_menu($data)
     {
-        $sql = 'insert into menu(id,pid,name,module_id,status,descrip) values(:id,:pid,:name,:module_id,:status,:descrip)';
+        $sql = 'insert into menu(id,showd,pid,name,module_id,status,descrip,category_tpl,list_tpl,detail_tpl) values(:id,:showd,:pid,:name,:module_id,:status,:descrip,:category_tpl,:list_tpl,:detail_tpl)';
         return self::exec($sql,[
             ':id' => null,
+            ':showd' => 1,
             ':pid' => $data['pid'],
             ':status' => $data['status'],
             ':name' => $data['name'],
             ':module_id' => $data['module_id'],
-            ':descrip' => $data['descrip']
+            ':descrip' => $data['descrip'],
+            ':category_tpl' => $data['category_tpl'],
+            ':list_tpl' => $data['list_tpl'],
+            ':detail_tpl' => $data['detail_tpl'],
         ]);
     }
 
@@ -88,8 +92,20 @@ class MenuModel extends Proxy implements MenuInterface
     public function get_menus()
     {
         $sql = 'select m1.id as m1id,m1.name as m1name,m2.id as m2id,m2.name as m2name from menu as m1 left join menu as m2 on m2.pid = m1.id where m1.pid = 0';
-        
+
         return self::exec($sql);
+    }
+
+
+    /**
+     * 删除栏目
+     */
+    public function delete_menu($menu_id)
+    {
+        $sql = 'delete from menu where id = :id';
+        return self::exec($sql,[
+            ':id' => $menu_id
+        ]);
     }
 
 }

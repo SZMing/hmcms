@@ -57,4 +57,51 @@ class AdminModel extends Proxy implements AdminInterface
         return ['result' => $result,'counts'=>(int)$counts[0]['counts']];
     }
 
+    //角色列表
+    public function role_lists($page_index,$page_size,$name)
+    {
+        $spage = (($page_index-1)*$page_size);
+        //判断是否有关键词
+        if($name)
+        {
+            $like = '%'.$name.'%';
+            $sql = "select id,role_name from role where role_name like '".$like."' limit $spage,$page_size";
+            //查询总条数
+            $sql_count = "select count(*) as counts from role where role_name like '".$like."'";
+
+
+        }else
+        {
+            $sql = "select id,role_name from role limit $spage,$page_size";
+            //查询总条数
+            $sql_count = 'select count(*) as counts from role';
+        }
+
+        $result = self::exec($sql);
+        $counts = self::exec($sql_count);
+        return ['result' => $result,'counts'=>(int)$counts[0]['counts']];
+    }
+
+    //添加角色
+    public function add_role($data)
+    {
+        $sql = 'insert into role(id,role_name) values(:id,:role_name)';
+        return self::exec($sql,[
+            ':id' => null,
+            ':role_name' => $data['role_name'],
+        ]);
+    }
+
+
+    /**
+     * 删除角色
+     */
+    public function delete_role($role_id)
+    {
+        $sql = 'delete from role where id = :id';
+        return self::exec($sql,[
+            ':id' => $role_id
+        ]);
+    }
+
 }

@@ -63,7 +63,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">所属栏目</label>
                         <div class="layui-input-block">
-                            <select name="module_id" lay-filter="aihao">
+                            <select name="pid" lay-filter="aihao">
                                 <option value="0" selected>顶级栏目</option>
 
                                 <% for menu in menus %>
@@ -104,7 +104,58 @@
 
 
                 </div>
-                <div class="layui-tab-item">内容4</div>
+                <div class="layui-tab-item">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">二级页模板</label>
+                        <div class="layui-input-block">
+                            <select name="category_tpl" lay-filter="aihao">
+                                <option value="0"></option>
+
+                                <% for key,value in tpls.category %>
+
+                                <option value="<%= key %>" <%= loop.index==1?'selected':'' %> ><%= value %></option>
+
+                                <% endfor %>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">列表模板</label>
+                        <div class="layui-input-block">
+                            <select name="list_tpl" lay-filter="aihao">
+                                <option value="0"></option>
+
+                                <% for key,value in tpls.list %>
+
+                                <option value="<%= key %>" <%= loop.index==1?'selected':'' %> ><%= value %></option>
+
+                                <% endfor %>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">详情模板</label>
+                        <div class="layui-input-block">
+                            <select name="detail_tpl" lay-filter="aihao">
+                                <option value="0"></option>
+
+                                <% for key,value in tpls.detail %>
+
+                                <option value="<%= key %>" <%= loop.index==1?'selected':'' %> ><%= value %></option>
+
+                                <% endfor %>
+
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 

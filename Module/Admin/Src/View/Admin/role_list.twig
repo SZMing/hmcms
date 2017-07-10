@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -18,12 +18,12 @@
 <body>
 <div style="margin: 15px;">
     <blockquote class="layui-elem-quote">
-        <a href="/admin/admin/add_admin" class="layui-btn layui-btn-small" id="add">
-            <i class="layui-icon">&#xe608;</i> 添加管理员
+        <a href="/admin/admin/add_role" class="layui-btn layui-btn-small" id="add">
+            <i class="layui-icon">&#xe608;</i> 添加角色
         </a>
     </blockquote>
     <fieldset class="layui-elem-field">
-        <legend>管理员列表</legend>
+        <legend>角色列表</legend>
         <div class="layui-field-box">
             <div>
                 <form>
@@ -34,9 +34,7 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>管理员名称</th>
-                        <th>管理员联系方式</th>
-                        <th>添加时间</th>
+                        <th>角色名称</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -53,12 +51,10 @@
                 {{# layui.each(d.list, function(index, item){ }}
                 <tr>
                     <td>{{ item.id }}</td>
-                    <td>{{ item.username }}</td>
-                    <td>{{ item.phonenum }}</td>
-                    <td>{{ item.create_time }}</td>
+                    <td>{{ item.role_name }}</td>
                     <td>
                         <a href="" class="layui-btn layui-btn-mini">编辑</a>
-                        <a href="" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                        <a href="javascript:void(0)" onclick="delete_role({{ item.id }})" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
                     </td>
                 </tr>
                 {{# }); }}
@@ -74,7 +70,7 @@
                     paging.init({
                         openWait: true,
                         //url: 'datas/laytpl_laypage_data.json?v=' + new Date().getTime(), //地址
-                        url: '/admin/admin/admin_lists',
+                        url: '/admin/admin/role_lists',
                         elem: '#con', //内容容器
                         type:'post',
                         params: { //发送到服务端的参数
@@ -111,6 +107,19 @@
                         });
                     });
                 });
+
+                var delete_role = function (id) {
+                    var $ = layui.jquery;
+                    $.ajax({
+                        url:'/admin/admin/delete_role?id='+id,
+                        type: 'GET',
+                        success:function (result) {
+                            layer.msg(result.msg);
+                            setTimeout("window.location.href = '/admin/admin/role'",1000);
+                        }
+                    });
+                }
+
             </script>
 
 

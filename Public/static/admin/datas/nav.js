@@ -5,11 +5,11 @@ var navs = [{
 	"children": [{
 		"title": "管理员管理",
 		"icon": "&#xe641;",
-		"href": "/admin/admin/admin_list"
+		"href": "/admin/admin/admin"
 	}, {
 		"title": "角色管理",
 		"icon": "&#xe63c;",
-		"href": "form.html"
+		"href": "/admin/admin/role"
 	}, {
 		"title": "权限管理",
 		"icon": "&#xe63c;",
