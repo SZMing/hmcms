@@ -32,4 +32,64 @@ class MenuModel extends Proxy implements MenuInterface
         return self::$_instance;
     }
 
+    /**
+     * 菜单列表
+     */
+    public function menu_lists($page_index,$page_size,$name)
+    {
+        $spage = (($page_index-1)*$page_size);
+        //判断是否有关键词
+        if($name)
+        {
+            $like = '%'.$name.'%';
+            $sql = "select id,name,module_id,descrip,status from menu where name like '".$like."' limit $spage,$page_size";
+            //查询总条数
+            $sql_count = "select count(*) as counts from menu where name like '".$like."'";
+        }else
+        {
+            $sql = "select id,name,module_id,descrip,status from menu limit $spage,$page_size";
+            //查询总条数
+            $sql_count = 'select count(*) as counts from menu';
+        }
+
+        $result = self::exec($sql);
+        $counts = self::exec($sql_count);
+        return ['result' => $result,'counts'=>(int)$counts[0]['counts']];
+    }
+
+    /**
+     * 添加栏目
+     */
+    public function add_menu($data)
+    {
+        $sql = 'insert into menu(id,pid,name,module_id,status,descrip) values(:id,:pid,:name,:module_id,:status,:descrip)';
+        return self::exec($sql,[
+            ':id' => null,
+            ':pid' => $data['pid'],
+            ':status' => $data['status'],
+            ':name' => $data['name'],
+            ':module_id' => $data['module_id'],
+            ':descrip' => $data['descrip']
+        ]);
+    }
+
+    /**
+     * 查询模型
+     */
+    public function get_modules()
+    {
+        $sql = 'select id,name from modules where status = 1';
+        return self::exec($sql);
+    }
+
+    /**
+     * 查询菜单
+     */
+    public function get_menus()
+    {
+        $sql = 'select m1.id as m1id,m1.name as m1name,m2.id as m2id,m2.name as m2name from menu as m1 left join menu as m2 on m2.pid = m1.id where m1.pid = 0';
+        
+        return self::exec($sql);
+    }
+
 }

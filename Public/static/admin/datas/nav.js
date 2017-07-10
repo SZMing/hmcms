@@ -26,7 +26,7 @@ var navs = [{
 	"children": [{
 		"title": "栏目管理",
 		"icon": "fa-table",
-		"href": "btable.html"
+		"href": "/admin/menu/menu"
 	}, {
 		"title": "内容管理",
 		"icon": "fa-navicon",
@@ -35,5 +35,9 @@ var navs = [{
 		"title": "模板管理",
 		"icon": "&#xe62a;",
 		"href": "tab.html"
-	}]
+	},{
+        "title": "模型管理",
+        "icon": "&#xe62a;",
+        "href": "/admin/module/module"
+    }]
 }];

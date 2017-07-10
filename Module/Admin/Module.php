@@ -22,6 +22,10 @@ class Module
             'MenuController' => [
                 \Module\Admin\Src\Model\MenuModel::getInstance(),
             ],
+
+            'ModuleController' => [
+                \Module\Admin\Src\Model\ModuleModel::getInstance(),
+            ],
         ];
     }
 }

@@ -33,7 +33,7 @@ class AdminModel extends Proxy implements AdminInterface
     }
 
     //$page_index请求的页面，$page_size每页显示条数，$name搜索关键词
-    static public function admin_lists($page_index,$page_size,$name)
+    public function admin_lists($page_index,$page_size,$name)
     {
         $spage = (($page_index-1)*$page_size);
         //判断是否有关键词

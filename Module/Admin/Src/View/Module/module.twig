@@ -18,12 +18,12 @@
 <body>
 <div style="margin: 15px;">
     <blockquote class="layui-elem-quote">
-        <a href="/admin/menu/add_menu" class="layui-btn layui-btn-small" id="add">
-            <i class="layui-icon">&#xe608;</i> 添加栏目
+        <a href="/admin/module/add_module" class="layui-btn layui-btn-small" id="add">
+            <i class="layui-icon">&#xe608;</i> 添加模型
         </a>
     </blockquote>
     <fieldset class="layui-elem-field">
-        <legend>栏目列表</legend>
+        <legend>模型列表</legend>
         <div class="layui-field-box">
             <div>
                 <form>
@@ -34,10 +34,10 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>菜单名称</th>
-                        <th>所属模型</th>
-                        <th>菜单状态</th>
-                        <th>菜单简介</th>
+                        <th>模型名称</th>
+                        <th>模型状态</th>
+                        <th>模型类型</th>
+                        <th>模型描述</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -55,12 +55,12 @@
                 <tr>
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
-                    <td>{{ item.module_id }}</td>
-                    <td>{{ item.status }}</td>
+                    <td>{{ item.status == 1 ? '启用' : '禁用' }}</td>
+                    <td>{{ item.module_type == 1? '单页模型':'文章模型' }}</td>
                     <td>{{ item.descrip }}</td>
                     <td>
                         <a href="" class="layui-btn layui-btn-mini">编辑</a>
-                        <a href="" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                        <a href="javascript:void(0)" onclick="delete_module({{ item.id }})" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
                     </td>
                 </tr>
                 {{# }); }}
@@ -76,7 +76,7 @@
                     paging.init({
                         openWait: true,
                         //url: 'datas/laytpl_laypage_data.json?v=' + new Date().getTime(), //地址
-                        url: '/admin/menu/menu_lists',
+                        url: '/admin/module/module_lists',
                         elem: '#con', //内容容器
                         type:'post',
                         params: { //发送到服务端的参数
@@ -113,9 +113,19 @@
                         });
                     });
                 });
+
+                var delete_module = function (id) {
+                    var $ = layui.jquery;
+                    $.ajax({
+                        url:'/admin/module/delete_module?id='+id,
+                        type: 'GET',
+                        success:function (result) {
+                            layer.msg(result.msg);
+                            setTimeout("window.location.href = '/admin/module/module'",1000);
+                        }
+                    });
+                }
             </script>
-
-
         </div>
     </fieldset>
 </div>

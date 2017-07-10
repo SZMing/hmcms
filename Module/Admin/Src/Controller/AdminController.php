@@ -42,8 +42,6 @@ class AdminController extends Controller
 
         $data = $this->admin_model->admin_lists($page_index,$page_size,$name);
 
-        //var_dump($data);
-
         $data = [
             'rel' => true,
             'msg' => '获取成功',
@@ -51,8 +49,6 @@ class AdminController extends Controller
             'count' => $data['counts'],
         ];
 
-
-        //return $this->success($data);
         return json_encode($data);
     }
 }

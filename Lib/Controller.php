@@ -77,7 +77,7 @@ class Controller
             'data'=>$arr,
             'page' => ['page' => $page,'offset' => $offset],
             'code' => $code,
-            'message' => $msg,
+            'msg' => $msg,
         ];
 
         return json_encode($data);
@@ -91,7 +91,7 @@ class Controller
         header('Content-type: application/json');
         $data = [
             'code' => $code,
-            'message' => $msg,
+            'msg' => $msg,
             'data' => $arr,
         ];
 
