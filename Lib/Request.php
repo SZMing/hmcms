@@ -54,4 +54,18 @@ class Request
 
         return $_GET;
     }
+
+    public function has($param)
+    {
+        $get_r = isset($_GET[$param]) ? true : false;
+        $post_r = isset($_POST[$param]) ? true : false;
+
+        if($get_r || $post_r)
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
 }

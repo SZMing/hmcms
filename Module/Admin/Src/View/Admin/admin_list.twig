@@ -18,9 +18,24 @@
 <body>
 <div style="margin: 15px;">
     <blockquote class="layui-elem-quote">
-        <h1>Laytpl + Laypage结合动态渲染数据并分页</h1></blockquote>
+        <a href="javascript:;" class="layui-btn layui-btn-small" id="add">
+            <i class="layui-icon">&#xe608;</i> 添加信息
+        </a>
+        <a href="#" class="layui-btn layui-btn-small" id="import">
+            <i class="layui-icon">&#xe608;</i> 导入信息
+        </a>
+        <a href="#" class="layui-btn layui-btn-small">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> 导出信息
+        </a>
+        <a href="#" class="layui-btn layui-btn-small" id="getSelected">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> 获取全选信息
+        </a>
+        <a href="javascript:;" class="layui-btn layui-btn-small" id="search">
+            <i class="layui-icon">&#xe615;</i> 搜索
+        </a>
+    </blockquote>
     <fieldset class="layui-elem-field">
-        <legend>演示</legend>
+        <legend>管理员列表</legend>
         <div class="layui-field-box">
             <div>
                 <form>
@@ -31,9 +46,10 @@
                     <thead>
                     <tr>
                         <th><input type="checkbox" id="selected-all"></th>
-                        <th>姓名</th>
-                        <th>年龄</th>
-                        <th>创建时间</th>
+                        <th>ID</th>
+                        <th>管理员名称</th>
+                        <th>管理员联系方式</th>
+                        <th>添加时间</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -50,9 +66,10 @@
                 {{# layui.each(d.list, function(index, item){ }}
                 <tr>
                     <td><input type="checkbox"></td>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.age }}</td>
-                    <td>{{ item.createtime }}</td>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.username }}</td>
+                    <td>{{ item.phonenum }}</td>
+                    <td>{{ item.create_time }}</td>
                     <td>
                         <a href="" target="_blank" class="layui-btn layui-btn-normal layui-btn-mini">预览</a>
                         <a href="" class="layui-btn layui-btn-mini">编辑</a>
@@ -65,7 +82,7 @@
             <script>
                 layui.config({
                     base: '/static/admin/js/'
-                }).use(['paging','laypage','code'], function() {
+                }).use(['paging','laydate','code'], function() {
                     layui.code();
                     var $ = layui.jquery,
                         paging = layui.paging();

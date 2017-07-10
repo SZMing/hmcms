@@ -30,50 +30,28 @@ class AdminController extends Controller
 
     public function admin_lists()
     {
+        $page_index = $this->request->get('pageIndex');
+        $page_size = $this->request->get('pageSize');
+
+        $name = false;
+
+        if($this->request->has('name'))
+        {
+            $name = $this->request->get('name');
+        }
+
+        $data = $this->admin_model->admin_lists($page_index,$page_size,$name);
+
+        //var_dump($data);
+
         $data = [
             'rel' => true,
             'msg' => '获取成功',
-            'list' => [
-                ['name' => '张三', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '里斯', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '里斯', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '里斯', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '里斯', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '阿斯防', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '接口', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-                ['name' => '2搜索的', 'age' => 21 , 'createtime' => "2017-01-10 10:42:36"],
-            ],
-            'count' => 50,
+            'list' => $data['result'],
+            'count' => $data['counts'],
         ];
+
+
         //return $this->success($data);
         return json_encode($data);
     }

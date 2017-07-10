@@ -32,10 +32,29 @@ class AdminModel extends Proxy implements AdminInterface
         return self::$_instance;
     }
 
-    static public function admin_list()
+    //$page_index请求的页面，$page_size每页显示条数，$name搜索关键词
+    static public function admin_lists($page_index,$page_size,$name)
     {
-        $sql = 'select * from pc_admin';
-        return self::exec($sql);
+        $spage = (($page_index-1)*$page_size);
+        //判断是否有关键词
+        if($name)
+        {
+            $like = '%'.$name.'%';
+            $sql = "select id,username,phonenum,from_unixtime(create_time) as create_time from admin where username like '".$like."' limit $spage,$page_size";
+            //查询总条数
+            $sql_count = "select count(*) as counts from admin where username like '".$like."'";
+
+
+        }else
+        {
+            $sql = "select id,username,phonenum,from_unixtime(create_time) as create_time from admin limit $spage,$page_size";
+            //查询总条数
+            $sql_count = 'select count(*) as counts from admin';
+        }
+
+        $result = self::exec($sql);
+        $counts = self::exec($sql_count);
+        return ['result' => $result,'counts'=>(int)$counts[0]['counts']];
     }
 
 }
