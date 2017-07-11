@@ -67,6 +67,36 @@ LOCK TABLES `admin_role` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `content`
+--
+
+DROP TABLE IF EXISTS `content`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `content` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '栏目id',
+  `title` varchar(150) NOT NULL DEFAULT '',
+  `author` varchar(30) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `descrip` text NOT NULL,
+  `content` text NOT NULL,
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `content`
+--
+
+LOCK TABLES `content` WRITE;
+/*!40000 ALTER TABLE `content` DISABLE KEYS */;
+INSERT INTO `content` VALUES (1,11,'aaaaaaa','aaaaaaaaa',1,'aaaaaaaaa','aaaaaaaaaa',123123),(2,12,'aaaaaaa','aaaaaaaaa',1,'aaaaaaaaa','aaaaaaaaaa',123123);
+/*!40000 ALTER TABLE `content` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `menu`
 --
 
@@ -85,7 +115,7 @@ CREATE TABLE `menu` (
   `descrip` varchar(150) NOT NULL DEFAULT '',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +124,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
-INSERT INTO `menu` VALUES (1,1,0,'电脑','aaaa','aaaa','aaa',1,'aaaaaa',1),(7,1,1,'aaaa','wg_index','wg_list','wg_detail',31,'aaaaaaaa',1);
+INSERT INTO `menu` VALUES (8,1,0,'新闻','index','list','detail',32,'这是公司新闻的描述',1),(9,1,8,'公司新闻','index','wg_list','detail',31,'这是公司新闻的描述',1),(10,1,8,'行业新闻','index','list','detail',31,'这是行业新闻的基本信息描述',1),(11,1,0,'关于我们','index','list','detail',31,'这是关于我们的描述',1),(12,1,11,'乐聪简介','index','list','detail',31,'这是乐聪简介的描述',1);
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +191,7 @@ CREATE TABLE `role` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `role_name` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-10  9:08:59
+-- Dump completed on 2017-07-11  3:37:08
