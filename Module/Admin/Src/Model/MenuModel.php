@@ -108,4 +108,44 @@ class MenuModel extends Proxy implements MenuInterface
         ]);
     }
 
+    /**
+     * 获取栏目信息
+     */
+    public function get_menu_info($menu_id)
+    {
+        $sql = 'select id,showd,pid,name,category_tpl,list_tpl,detail_tpl,module_id,descrip,status from menu where id = :id limit 1';
+        $result = self::get_one(self::exec($sql,[
+            ':id' => $menu_id
+        ]));
+
+        return $result;
+    }
+
+
+    /**
+     * 编辑角色
+     */
+    public function edit_menu($data)
+    {
+        $sql = 'update menu set showd = :showd,pid = :pid,name = :name,category_tpl = :category_tpl,list_tpl = :list_tpl,detail_tpl = :detail_tpl,module_id = :module_id,descrip = :descrip,status = :status where id = :id';
+        if(self::exec($sql,[
+            ':id' => $data['menu_id'],
+            ':showd' => 1,
+            ':pid'=>$data['pid'],
+            ':name' => $data['name'],
+            ':category_tpl' => $data['category_tpl'],
+            ':list_tpl' => $data['list_tpl'],
+            ':detail_tpl' => $data['detail_tpl'],
+            ':module_id' => $data['module_id'],
+            ':descrip' => $data['descrip'],
+            ':status' => $data['status']
+        ]))
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+
 }

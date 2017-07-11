@@ -30,7 +30,7 @@ var navs = [{
 	}, {
 		"title": "内容管理",
 		"icon": "fa-navicon",
-		"href": "navbar.html"
+		"href": "/admin/content/content"
 	}, {
 		"title": "模板管理",
 		"icon": "&#xe62a;",

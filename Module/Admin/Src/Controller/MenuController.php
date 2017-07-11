@@ -139,4 +139,82 @@ class MenuController extends Controller
         }
     }
 
+
+    /**
+     * 编辑栏目
+     */
+    public function edit_menu()
+    {
+        $menu_id = $this->request->get('id');
+
+
+        //查询模型，发送到页面
+        $modules = $this->menu_model->get_modules();
+        //查询菜单，发送到页面
+        $data = $this->menu_model->get_menus();
+        //整理菜单
+        $menus = [];
+        foreach ($data as $menu)
+        {
+            $menus[$menu['m1id']]['m1name'] = $menu['m1name'];
+            $menus[$menu['m1id']]['m1id'] = $menu['m1id'];
+            $menus[$menu['m1id']]['category'][] = [
+                'm2id' => $menu['m2id'],
+                'm2name' => $menu['m2name']
+            ];
+        }
+
+        //查询模板
+        //取出启用的模板
+        $theme = Help::config('twig.theme');
+        //取出所有的模板
+        $tpls = Help::config('tpl.'.$theme);
+
+
+
+        //获取栏目信息
+        $menu_info = $this->menu_model->get_menu_info($menu_id);
+        return $this->render('admin/menu/edit_menu',['menu_info' => $menu_info,'modules' => $modules,'menus'=>$menus,'tpls'=>$tpls]);
+    }
+
+    /**
+     * ajax_edit_menu
+     */
+    public function ajax_edit_menu()
+    {
+        $menu_id = $this->request->post('menu_id');
+        $name = $this->request->post('name');
+        $pid = $this->request->post('pid');
+        $module_id = $this->request->post('module_id');
+        $status = 0;
+        if($this->request->has('open'))
+        {
+            $status = 1;
+        }
+        $descrip = $this->request->post('descrip');
+        $category_tpl = $this->request->post('category_tpl');
+        $list_tpl = $this->request->post('list_tpl');
+        $detail_tpl = $this->request->post('detail_tpl');
+
+        $data = [
+            'menu_id' => $menu_id,
+            'name' => $name,
+            'module_id' => $module_id,
+            'pid' => $pid,
+            'status' => $status,
+            'descrip' => $descrip,
+            'category_tpl' => $category_tpl,
+            'list_tpl' => $list_tpl,
+            'detail_tpl' => $detail_tpl,
+        ];
+
+        if($this->menu_model->edit_menu($data))
+        {
+            return $this->success();
+        }else
+        {
+            return $this->fails(10005,'修改栏目失败');
+        }
+    }
+
 }

@@ -104,4 +104,32 @@ class AdminModel extends Proxy implements AdminInterface
         ]);
     }
 
+    /**
+     * 获取角色信息
+     */
+    public function get_role_info($role_id)
+    {
+        $sql = 'select id,role_name from role where id = :id limit 1';
+        $result = self::get_one(self::exec($sql,[
+            ':id' => $role_id
+        ]));
+
+        return $result;
+    }
+
+    /**
+     * 编辑角色
+     */
+    public function edit_role($data)
+    {
+        $sql = 'update role set role_name = :role_name where id = :id';
+        if(self::exec($sql,[':role_name' => $data['role_name'],':id'=>$data['role_id']]))
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+
 }

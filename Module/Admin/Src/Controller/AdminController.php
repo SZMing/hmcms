@@ -136,4 +136,37 @@ class AdminController extends Controller
             return $this->fails(10005,'删除角色失败');
         }
     }
+
+    /**
+     * 编辑角色
+     */
+    public function edit_role()
+    {
+        $role_id = $this->request->get('id');
+        //获取角色信息
+        $role_info = $this->admin_model->get_role_info($role_id);
+        return $this->render('admin/admin/edit_role',['role_info' => $role_info]);
+    }
+
+    /**
+     * ajax_edit_role
+     */
+    public function ajax_edit_role()
+    {
+        $role_id = $this->request->post('role_id');
+        $role_name = $this->request->post('role_name');
+
+        $data = [
+            'role_id' => $role_id,
+            'role_name' => $role_name,
+        ];
+
+        if($this->admin_model->edit_role($data))
+        {
+            return $this->success();
+        }else
+        {
+            return $this->fails(10005,'修改失败');
+        }
+    }
 }

@@ -53,7 +53,7 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.role_name }}</td>
                     <td>
-                        <a href="" class="layui-btn layui-btn-mini">编辑</a>
+                        <a href="/admin/admin/edit_role?id={{ item.id }}" class="layui-btn layui-btn-mini">编辑</a>
                         <a href="javascript:void(0)" onclick="delete_role({{ item.id }})" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
                     </td>
                 </tr>

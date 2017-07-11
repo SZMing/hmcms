@@ -63,7 +63,7 @@
                     <td>{{ item.list_tpl }}</td>
                     <td>{{ item.detail_tpl }}</td>
                     <td>
-                        <a href="" class="layui-btn layui-btn-mini">编辑</a>
+                        <a href="/admin/menu/edit_menu?id={{ item.id }}" class="layui-btn layui-btn-mini">编辑</a>
                         <a href="javascript:void(0)" onclick="delete_menu({{ item.id }})" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
                     </td>
                 </tr>

@@ -26,6 +26,10 @@ class Module
             'ModuleController' => [
                 \Module\Admin\Src\Model\ModuleModel::getInstance(),
             ],
+
+            'ContentController' => [
+                \Module\Admin\Src\Model\ContentModel::getInstance(),
+            ],
         ];
     }
 }
